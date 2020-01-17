@@ -120,12 +120,17 @@ while True:
     cmd = "date '+Time: %H:%M:%S'"
     Dat= subprocess.check_output(cmd,shell = True) 
     # Write two lines of text.
+    cmd = "cat /sys/class/thermal/thermal_zone0/temp"
+    Temp=subprocess.check_output(cmd,shell=True)
+    Temp="CPU temp: "+str(int(Temp)/1000.0)
 
     draw.text((x, top),       "IP: " + str(IP),  font=font, fill=255)
     draw.text((x, top+8),     str(CPU), font=font, fill=255)
     draw.text((x, top+16),    str(MemUsage),  font=font, fill=255)
     draw.text((x, top+25),    str(Disk),  font=font, fill=255)
     draw.text((x, top+33),    str(Dat), font=font,fill=255)
+    draw.text((x, top+41),    str(Temp),font=font,fill=255)
+    
     # Display image.
     disp.image(image)
     disp.display()
