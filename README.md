@@ -5,7 +5,7 @@ which I use can be buy in tabao
 you can watch the https://shumeipai.nxez.com/2019/04/29/use-the-ssd1306-oled-display-on-the-raspberry-pi.html 
 the method is very like the blogs says but actully I changed the source code to fix my platform 
 that blog is just suitable for its plat
-# frist
+# first
 make sure you IO connet is corect you can see https://shumeipai.nxez.com/raspberry-pi-pins-version-40 
 in my project my IO connect is 
 
