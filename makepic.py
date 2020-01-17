@@ -40,11 +40,12 @@ while(cap.isOpened()):
    # cv2.imshow("vide0",frame)
     cv2.imwrite("temp.jpg",frame)
     img = Image.open("temp.jpg")
-    img = img.resize((128,68))
+    img = img.resize((128,64))
     img = img.convert("1")
     disp.image(img)
+    disp.display()
     img.save("temp.jpg")
-    time.sleep(0.1)
+    time.sleep(0.05)
     #if cv2.waitKey(40) & 0xff==ord('q'):
     #  break
 cap.release()
