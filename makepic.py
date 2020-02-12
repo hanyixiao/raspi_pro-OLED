@@ -34,10 +34,13 @@ disp.clear()
 disp.display()
 
 cap = cv2.VideoCapture("test.mp4")
-
+time_temp=time.time()
 while(cap.isOpened()):
     ret,frame=cap.read()
    # cv2.imshow("vide0",frame)
+    fps=1/(time.time()-time_temp)
+    print("%0.2f"%fps)
+    time_temp=time.time()
     cv2.imwrite("temp.jpg",frame)
     img = Image.open("temp.jpg")
     img = img.resize((128,64))
@@ -45,7 +48,7 @@ while(cap.isOpened()):
     disp.image(img)
     disp.display()
     img.save("temp.jpg")
-    time.sleep(0.05)
+   # time.sleep(0.05)
     #if cv2.waitKey(40) & 0xff==ord('q'):
     #  break
 cap.release()
